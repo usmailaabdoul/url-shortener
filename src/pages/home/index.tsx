@@ -6,7 +6,8 @@ const HomeSection = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
+  overflow-x: hidden;
+
   .next-section {
     margin-top: 150px;
     background: ${({ theme }) => theme.colors.background};
