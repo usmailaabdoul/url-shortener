@@ -55,7 +55,8 @@ const StyleContainer = styled.div<{
 
 const ShortenUrlCard: FC<{
   shortenURL: (value: string) => void;
-}> = ({shortenURL}) => {
+  loading: boolean;
+}> = ({shortenURL, loading}) => {
   const [error, setError] = useState<boolean>(false);
   const [value, setValue] = useState<string>('');
 
@@ -63,6 +64,11 @@ const ShortenUrlCard: FC<{
     if (value.length === 0) return setError(true);
     shortenURL(value)
   }
+
+  const onFocus = () => {
+    if (error) setError(false);
+  }
+
   return (
     <StyleContainer error={error}>
       <div className="form">
@@ -70,8 +76,9 @@ const ShortenUrlCard: FC<{
           value={error ? 'Shorten a link here...' : value}
           onChange={(e) => setValue(e.target.value)}
           placeholder='Shorten a link here...'
+          onFocus={onFocus}
         />
-        <SecondaryButton label="Shotren it!" onClick={() => submit()} />
+        <SecondaryButton label="Shotern it!" onClick={() => submit()} loading={loading} />
       </div>
       {error && (<span className="error">Please add a link</span>)}
     </StyleContainer>

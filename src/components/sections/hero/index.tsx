@@ -13,7 +13,7 @@ const StyleContainer = styled.div`
   .main-body {
     width: 50%;
     height: 100%;
-    padding-right: 100px;
+    padding-right: 50px;
 
     .title {
       font-size: 70px;
@@ -39,7 +39,7 @@ const StyleContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
     position: absolute;
-    right: -180px;
+    right: -220px;
     top: 0px;
     bottom: 0px;
 

@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, FC } from 'react';
 import styled from 'styled-components'
 import SecondaryButton from '../button/secondaryButtton';
+import {LinkProps} from '../sections/urlShortener/';
 
 const StyleContainer = styled.div`
   background: ${({ theme }) => theme.colors.white};
@@ -25,15 +26,30 @@ const StyleContainer = styled.div`
   }
 `;
 
-const UrlCard = () => {
+const UrlCard: FC<{
+  link: LinkProps
+}> = ({link}) => {
   const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(link.full_short_link)
+      setCopied(true)
+    } catch (error) {
+      console.log(error)
+    } 
+  };
 
   return (
     <StyleContainer>
-      <span className="main-url">http://localhost:3000/</span>
+      <span className="main-url">{link.original_link}</span>
       <div>
-        <span className="secondary-url">http://local</span>
-        <SecondaryButton label={copied? "Copied!": "Copy"} onClick={() => setCopied(true)} size='s' copied={copied} />
+        <span className="secondary-url">{link.full_short_link}</span>
+        <SecondaryButton 
+          label={copied? "Copied!": "Copy"} 
+          onClick={() => copyToClipboard()} 
+          size='s' 
+          copied={copied} />
       </div>
     </StyleContainer>
   )

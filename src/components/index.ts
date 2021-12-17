@@ -10,3 +10,5 @@ export {default as NavBar} from './sections/navBar';
 export {default as Hero} from './sections/hero';
 export {default as UrlShortener} from './sections/urlShortener';
 export {default as Statistics} from './sections/statistics';
+export {default as UserAction} from './sections/userAction';
+export {default as Footer} from './sections/footer';

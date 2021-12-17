@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import logo from '../../../images/logo.svg';
 import FlatButton from '../../button/flatButton';
 import PrimaryButton from '../../button/primaryButton';
+import {Logo} from '../../../images/svg';
 
 const StyleContainer = styled.div`
   margin-top: 40px;
@@ -31,7 +31,7 @@ const NavBar = () => {
     <StyleContainer>
       <div className='navWrapper'>
         <div className='logo'>
-          <img src={logo} alt="logo" />
+          <Logo />
         </div>
         <div className='buttons'>
           <FlatButton label="Features" onClick={() => console.log('Sign up')} link="#" />

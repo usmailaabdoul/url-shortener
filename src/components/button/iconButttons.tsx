@@ -3,7 +3,7 @@ import { Twitter, Facebook, Instagram, Pinterest } from '../../images/svg';
 
 const StyledButton = styled.button`
   border: none;
-  background-color: ${({ theme }) => theme.colors.primary_cyan};
+  background-color: ${({ theme }) => theme.colors.dark_violet};
   margin: 10px 10px;
 
   a {

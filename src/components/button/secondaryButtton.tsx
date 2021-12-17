@@ -20,6 +20,13 @@ const StyledButton = styled.button<{
     color: ${({ theme }) => theme.colors.white};
     font-weight: 700;
   }
+
+  .loading {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;
 
 const SecondaryButton: FC<{
@@ -27,10 +34,15 @@ const SecondaryButton: FC<{
   onClick: () => void,
   size?: 'm' | 's',
   copied?: boolean,
-}> = ({label, onClick, size = 'm', copied = false}) => {
+  loading?: boolean,
+}> = ({label, onClick, size = 'm', copied = false, loading}) => {
   return (
-    <StyledButton onClick={onClick} size={size} copied={copied}>
-      <span className="label">{label}</span>
+    <StyledButton onClick={onClick} size={size} copied={copied} disabled={copied}>
+      {loading ? (
+        <div className="spinner-border loading" role="status"/>
+      ) : (
+        <span className="label">{label}</span>
+      )}
     </StyledButton>
   )
 }
