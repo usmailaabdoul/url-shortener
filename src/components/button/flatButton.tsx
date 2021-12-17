@@ -9,7 +9,7 @@ const StyledButton = styled.button<{
   height: '40px';
   border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.white};
-  margin: 10px 0;
+  margin: 10px 10px;
   
   a {
     color: ${({ theme, atFooter }) => atFooter ? theme.colors.gray : theme.colors.grayish_violet};

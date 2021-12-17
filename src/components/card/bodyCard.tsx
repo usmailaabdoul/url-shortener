@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import styled from 'styled-components'
 import { AiOutlineLineChart } from 'react-icons/ai';
 import { IoSpeedometerOutline } from 'react-icons/io5';
@@ -5,7 +6,6 @@ import { GiPencilBrush } from 'react-icons/gi';
 
 const StyleContainer = styled.div`
   background: ${({ theme }) => theme.colors.white};
-  border: 1px solid ${({ theme }) => theme.colors.gray};
   width: 350px;
   height: 250px;
   border-radius: 5px;
@@ -30,25 +30,30 @@ const StyleContainer = styled.div`
     font-size: 35px;
     color: ${({ theme }) => theme.colors.primary_cyan};
     background: ${({ theme }) => theme.colors.primary_dark_violet};
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     text-align: center;
-    border-radius: 30px;
+    border-radius: 100%;
     margin-top: -60px;
     margin-bottom: 25px;
   }
 `;
 
-const BodyCard = () => {
+const BodyCard: FC<{
+  icon: 'chart' | 'speed' | 'brush';
+  title: string;
+  description: string;
+  className?: string;
+}>= ({icon, title, description, className = ''}) => {
   return (
-    <StyleContainer>
+    <StyleContainer className={className}>
       <div className="icon">
-        {/* <AiOutlineLineChart /> */}
-        {/* <IoSpeedometerOutline /> */}
-        <GiPencilBrush />
+        {icon === 'chart' && (<AiOutlineLineChart />)}
+        {icon === 'speed' && (<IoSpeedometerOutline />)}
+        {icon === 'brush' && (<GiPencilBrush />)}
       </div>
-      <h5>Brand Recognition</h5>
-      <p>Mollit ullamco ut nisi magna ullamco commodo id sunt. Eu nulla incididunt in consectetur. Enim consequat ut id mollit aliqua consectetur. Cillum officia ullamco aute excepteur proident laboris ea id consectetur id minim.</p>
+      <h5>{title}</h5>
+      <p>{description}</p>
     </StyleContainer>
   )
 }

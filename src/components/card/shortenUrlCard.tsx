@@ -18,6 +18,7 @@ const StyleContainer = styled.div<{
   justify-content: center;
   flex-direction: column;
   padding: 0px 50px;
+  margin-bottom: 20px;
 
   .form {
     display: flex;

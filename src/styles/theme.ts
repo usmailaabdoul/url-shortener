@@ -9,7 +9,8 @@ export const theme = {
     grayish_violet: 'hsl(257, 7%, 63%)',
     dark_blue: 'hsl(255, 11%, 22%)',
     dark_violet: 'hsl(260, 8%, 14%)',
-    white: '#ffffff'
+    white: '#ffffff',
+    background: '#EEF1F6',
   },
   font: {
     primary: "Poppins",

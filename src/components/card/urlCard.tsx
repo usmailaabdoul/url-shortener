@@ -4,7 +4,6 @@ import SecondaryButton from '../button/secondaryButtton';
 
 const StyleContainer = styled.div`
   background: ${({ theme }) => theme.colors.white};
-  border: 1px solid ${({ theme }) => theme.colors.gray};
   width: 100%;
   height: 65px;
   border-radius: 5px;

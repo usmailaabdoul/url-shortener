@@ -5,7 +5,7 @@ const StyledButton = styled.button<{
   size: string
 }>`
   border: none;
-  width: ${({ size }) => size === 's' ? '110px' : '150px'};
+  width: ${({ size }) => size === 's' ? '110px' : '170px'};
   height: ${({ size }) => size === 's' ? '40px' : '45px'};
   border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.primary_cyan};
@@ -26,10 +26,11 @@ const PrimmaryButton: FC<{
   label: string,
   onClick: () => void,
   link: string,
-  size?: 'm' | 's'
-}> = ({label, onClick, link, size = 's'}) => {
+  size?: 'm' | 's';
+  className?: string;
+}> = ({label, onClick, link, size = 's', className =''}) => {
   return (
-    <StyledButton onClick={onClick} size={size}>
+    <StyledButton className={className} onClick={onClick} size={size}>
       <a href={link}>{label}</a>
     </StyledButton>
   )
