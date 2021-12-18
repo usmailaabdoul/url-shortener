@@ -12,7 +12,8 @@ const StyledButton = styled.button`
         fill: ${({ theme }) => theme.colors.white};
     }
   }
-  :hover {
+  :hover,
+  :active {
     a {
       color: theme.colors.grayish_violet;
         svg > path {
@@ -26,7 +27,7 @@ const StyleContainer = styled.div``;
 
 const IconButton = () => {
   return (
-    <StyleContainer>
+    <StyleContainer data-testid="icon-buttons">
       <StyledButton>
         <a href='###'>
           <Facebook />

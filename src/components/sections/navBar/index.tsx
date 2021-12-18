@@ -1,7 +1,10 @@
+import { FC } from 'react';
 import styled from 'styled-components'
 import FlatButton from '../../button/flatButton';
 import PrimaryButton from '../../button/primaryButton';
-import {Logo} from '../../../images/svg';
+import IconButton from '../../button/iconButton';
+import { Logo } from '../../../images/svg';
+import { useIsMobileDevice } from '../../../utils/deviceWidth';
 
 const StyleContainer = styled.div`
   margin-top: 40px;
@@ -26,23 +29,34 @@ const StyleContainer = styled.div`
   }
 `;
 
-const NavBar = () => {
+const NavBar: FC<{
+  onClick: () => void,
+}> = ({ onClick }) => {
+  const isMobile = useIsMobileDevice();
+
   return (
-    <StyleContainer>
+    <StyleContainer data-testid="navbar">
       <div className='navWrapper'>
         <div className='logo'>
           <Logo />
         </div>
-        <div className='buttons'>
-          <FlatButton label="Features" onClick={() => console.log('Sign up')} link="#" />
-          <FlatButton label="Pricing" onClick={() => console.log('Sign up')} link="#" />
-          <FlatButton label="Resources" onClick={() => console.log('Sign up')} link="#" />
+        {!isMobile && (
+          <div className='buttons'>
+            <FlatButton label="Features" onClick={() => console.log('Sign up')} link="#" />
+            <FlatButton label="Pricing" onClick={() => console.log('Sign up')} link="#" />
+            <FlatButton label="Resources" onClick={() => console.log('Sign up')} link="#" />
+          </div>
+        )}
+      </div>
+      {isMobile && (
+        <IconButton icon='menu' onClick={() => onClick()}/>
+      )} 
+      {!isMobile && (
+        <div className="auth-buttons">
+          <FlatButton label="Login" onClick={() => console.log('Login')} link="#" />
+          <PrimaryButton label="Sign Up" onClick={() => console.log('Sign up')} link="#" className="signUp-btn" />
         </div>
-      </div>
-      <div className="auth-buttons">
-        <FlatButton label="Login" onClick={() => console.log('Sign up')} link="#" />
-        <PrimaryButton label="Sign Up" onClick={() => console.log('Sign up')} link="#" className="signUp-btn" />
-      </div>
+      )}
     </StyleContainer>
   )
 }

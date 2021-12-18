@@ -15,7 +15,7 @@ export const theme = {
   font: {
     primary: "Poppins",
   },
-  layout: {
+  layouts: {
     mobile: '375px',
     desktop: '1440px',
   }

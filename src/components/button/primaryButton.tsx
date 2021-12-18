@@ -2,7 +2,8 @@ import {FC} from 'react'
 import styled from 'styled-components'
 
 const StyledButton = styled.button<{
-  size: string
+  size: string;
+  isInNav?: boolean;
 }>`
   border: none;
   width: ${({ size }) => size === 's' ? '110px' : '170px'};
@@ -11,7 +12,8 @@ const StyledButton = styled.button<{
   background-color: ${({ theme }) => theme.colors.primary_cyan};
   margin: 10px 0;
 
-  :hover {
+  :hover,
+  :active {
     background-color: ${({ theme }) => theme.colors.primary_cyan_light};
   }
 
@@ -19,6 +21,14 @@ const StyledButton = styled.button<{
     color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
     font-weight: 700;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
+    width: ${({ isInNav }) => isInNav ? '100%' : '170px'};
+    a {
+      font-size: 18px;
+      font-weight: 700;
+    }
   }
 `;
 
@@ -28,9 +38,10 @@ const PrimmaryButton: FC<{
   link: string,
   size?: 'm' | 's';
   className?: string;
-}> = ({label, onClick, link, size = 's', className =''}) => {
+  isInNav?: boolean;
+}> = ({label, onClick, link, size = 's', className ='', isInNav}) => {
   return (
-    <StyledButton className={className} onClick={onClick} size={size}>
+    <StyledButton className={className} onClick={onClick} size={size} isInNav={isInNav}>
       <a href={link}>{label}</a>
     </StyledButton>
   )

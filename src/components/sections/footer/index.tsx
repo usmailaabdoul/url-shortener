@@ -1,14 +1,13 @@
 import styled from 'styled-components'
-import IconButtons from '../../button/iconButttons';
+import IconButtons from '../../button/iconButtons';
 import { Logo } from '../../../images/svg';
 import { theme } from '../../../styles/theme';
 
 const StyleContainer = styled.div`
-  height: 300px;
+  height: auto;
   display: flex;
   margin-top: 40px;
-  // align-items: center;
-  // justify-content: center;
+  margin-bottom: 70px;
 
   .logo {
     color: ${({ theme }) => theme.colors.white};
@@ -36,6 +35,25 @@ const StyleContainer = styled.div`
       :hover {
         color: ${({ theme }) => theme.colors.primary_cyan};
       }
+    }
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .logo {
+      margin-bottom: 50px;
+    }
+    .links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .wrappers {
+      align-items: center;
+      margin-bottom: 50px;
     }
   }
 `;

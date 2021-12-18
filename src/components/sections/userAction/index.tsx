@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import PrimaryButton from '../../button/primaryButton';
 import bg_desktop from '../../../images/bg-boost-desktop.svg';
+import bg_mobile from '../../../images/bg-boost-mobile.svg';
 
 const StyleContainer = styled.div`
   background: ${({ theme }) => theme.colors.primary_dark_violet};
@@ -17,6 +18,12 @@ const StyleContainer = styled.div`
   h1 {
     color: ${({ theme }) => theme.colors.white};
     font-family: ${({ theme }) => theme.font.primary};
+    font-weight: 700;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
+    background-image: url(${bg_mobile});
+    height: 300px;
   }
 `;
 
