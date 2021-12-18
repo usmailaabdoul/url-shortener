@@ -17,12 +17,14 @@ const StyleContainer = styled.div`
   .main-url {
     color: ${({ theme }) => theme.colors.dark_violet};
     font-weight: 500;
+    flex: 3;
   };
 
   .secondary-url {
     color: ${({ theme }) => theme.colors.primary_cyan};
     font-weight: 500;
     margin-right: 20px;
+    flex: 1
   }
 
   @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
