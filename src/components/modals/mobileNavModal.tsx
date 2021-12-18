@@ -77,7 +77,7 @@ const MobileNavModal: FC<{showModal: boolean, hideModal: () => void}> = ({showMo
       contentLabel="Example Modal"
       ariaHideApp={false}
     >
-      <StyleContainer>
+      <StyleContainer data-testid="mobile-nav-modal">
         <div className='buttons'>
           <FlatButton className='navModalBtn' label="Features" onClick={() => console.log('Sign up')} link="#" />
           <FlatButton className='navModalBtn' label="Pricing" onClick={() => console.log('Sign up')} link="#" />

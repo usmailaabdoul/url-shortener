@@ -61,7 +61,7 @@ const UrlShortener = () => {
   }
 
   return (
-    <StyleContainer>
+    <StyleContainer data-testid="url-shortener">
       <ShortenUrlCard shortenURL={(value: string) => shortenUrl(value)} loading={loading} urlError={error} clearError={() => setError(null)}/>
       {links.map((link: LinkProps, index: number) => (
         <UrlCard key={index} link={link} />

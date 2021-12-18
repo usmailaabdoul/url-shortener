@@ -35,7 +35,7 @@ const NavBar: FC<{
   const isMobile = useIsMobileDevice();
 
   return (
-    <StyleContainer>
+    <StyleContainer data-testid="navbar">
       <div className='navWrapper'>
         <div className='logo'>
           <Logo />
@@ -53,8 +53,8 @@ const NavBar: FC<{
       )} 
       {!isMobile && (
         <div className="auth-buttons">
-          <FlatButton label="Login" onClick={() => console.log('Sign up')} link="#" />
-          <PrimaryButton label="Sign Up" onClick={() => onClick()} link="#" className="signUp-btn" />
+          <FlatButton label="Login" onClick={() => console.log('Login')} link="#" />
+          <PrimaryButton label="Sign Up" onClick={() => console.log('Sign up')} link="#" className="signUp-btn" />
         </div>
       )}
     </StyleContainer>

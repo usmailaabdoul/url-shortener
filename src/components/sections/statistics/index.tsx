@@ -105,15 +105,15 @@ const Statistics = () => {
         <BodyCard
           className='card-2'
           icon='speed'
-          title='Brand Recognition'
-          description='Mollit ullamco ut nisi magna ullamco commodo id sunt. Eu nulla incididunt in consectetur. Enim consequat ut id mollit aliqua consectetur. Cillum officia ullamco aute excepteur proident laboris ea id consectetur id minim.'
+          title='Detailed Records'
+          description='Mollit ullamco ut nisi magna ullamco commodo id sunt. Enim consequat ut id mollit aliqua consectetur. Cillum officia ullamco aute excepteur proident laboris ea id consectetur id minim.'
         />
         <div className="seperator" />
         <BodyCard
           className='card-3'
           icon='brush'
-          title='Brand Recognition'
-          description='Mollit ullamco ut nisi magna ullamco commodo id sunt. Eu nulla incididunt in consectetur. Enim consequat ut id mollit aliqua consectetur. Cillum officia ullamco aute excepteur proident laboris ea id consectetur id minim.'
+          title='Fully Customizable'
+          description='Mollit ullamco ut nisi magna ullamco commodo id sunt. Eu nulla incididunt in consectetur. Enim consequat ut id mollit aliqua consectetur.'
         />
       </div>
     </StyleContainer>

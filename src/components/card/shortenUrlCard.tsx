@@ -100,7 +100,7 @@ const ShortenUrlCard: FC<{
   }
 
   return (
-    <StyleContainer error={error}>
+    <StyleContainer error={error} data-testid="shorten-url-form">
       <div className="Wrapper">
         <div className="form">
           <input

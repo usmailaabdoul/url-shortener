@@ -7,7 +7,6 @@ import { GiPencilBrush } from 'react-icons/gi';
 const StyleContainer = styled.div`
   background: ${({ theme }) => theme.colors.white};
   width: 350px;
-  height: 250px;
   border-radius: 5px;
   padding: 25px;
   position: relative;

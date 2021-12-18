@@ -41,7 +41,7 @@ const Home = () => {
   const [showModal, setShowModal] = useState<boolean>(false)
 
   return (
-    <HomeSection isMobile={isMobile}>
+    <HomeSection isMobile={isMobile} data-testid='home'>
       <div className='wrapper'>
         <div className='container'>
           <NavBar onClick={() => setShowModal(true)}/>
