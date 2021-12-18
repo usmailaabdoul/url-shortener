@@ -21,7 +21,7 @@ const IconButton: FC<{
   onClick: () => void,
 }> = ({ icon, onClick }) => {
   return (
-    <StyledButton onClick={onClick}>
+    <StyledButton onClick={onClick} data-testid="icon-button">
       {icon === 'menu' && (
         <Menu color={theme.colors.grayish_violet} />
       )}

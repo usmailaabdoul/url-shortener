@@ -27,7 +27,7 @@ const StyleContainer = styled.div``;
 
 const IconButton = () => {
   return (
-    <StyleContainer>
+    <StyleContainer data-testid="icon-buttons">
       <StyledButton>
         <a href='###'>
           <Facebook />

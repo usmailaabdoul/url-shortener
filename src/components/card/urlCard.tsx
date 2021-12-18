@@ -31,7 +31,7 @@ const StyleContainer = styled.div`
     flex-direction: column;
     height: auto;
     padding: 0px; 
-    margin: 0px;
+    margin: 10px 0px;
 
     .main-url {
       padding: 10px 20px;
