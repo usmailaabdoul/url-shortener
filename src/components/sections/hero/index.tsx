@@ -50,7 +50,7 @@ const StyleContainer = styled.div`
     }
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
     padding-top: 200px;
     margin-bottom: 0px;
 

@@ -7,7 +7,7 @@ import FlatButton from '../button/flatButton';
 import { theme } from '../../styles/theme';
 
 const StyleContainer = styled.div`
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
     margin: 30px 20px;
 
     .buttons {

@@ -7,7 +7,7 @@ const StyleContainer = styled.div`
   margin-top: -75px;
   margin-bottom: 100px;
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
     margin-top: -80px;
   }
 `;

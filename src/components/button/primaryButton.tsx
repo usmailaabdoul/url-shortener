@@ -23,7 +23,7 @@ const StyledButton = styled.button<{
     font-weight: 700;
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
     width: ${({ isInNav }) => isInNav ? '100%' : '170px'};
     a {
       font-size: 18px;

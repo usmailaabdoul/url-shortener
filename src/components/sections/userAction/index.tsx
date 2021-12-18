@@ -21,7 +21,7 @@ const StyleContainer = styled.div`
     font-weight: 700;
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
     background-image: url(${bg_mobile});
     height: 300px;
   }

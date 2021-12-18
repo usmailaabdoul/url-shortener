@@ -38,7 +38,7 @@ const StyleContainer = styled.div`
     margin-bottom: 30px;
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
     width: auto;
     display: flex;
     flex-direction: column;

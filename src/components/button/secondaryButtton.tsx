@@ -30,7 +30,7 @@ const StyledButton = styled.button<{
     color: ${({ theme }) => theme.colors.white};
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
     width: 100%;
     border-radius: 4px;
   }

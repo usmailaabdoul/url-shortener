@@ -47,7 +47,7 @@ const StyleContainer = styled.div`
     }
   }
 
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
     .title-section {
       width: 100%;
 
