@@ -11,8 +11,10 @@ const StyledButton = styled.button<{
   border-radius: ${({ size }) => size === 's' ? '4px' : '8px'};
   background-color: ${({ theme, copied }) => copied ? theme.colors.primary_dark_violet : theme.colors.primary_cyan};
   margin: 10px 0;
+  margin-top: 0;
   
-  :hover {
+  :hover,
+  :active {
     background-color: ${({ theme, copied }) => copied ? theme.colors.primary_dark_violet : theme.colors.primary_cyan_light};
   }
 
@@ -27,6 +29,11 @@ const StyledButton = styled.button<{
     border-width: 2px;
     color: ${({ theme }) => theme.colors.white};
   }
+
+  @media only screen and (max-width: 375px) {
+    width: 100%;
+    border-radius: 4px;
+  }
 `;
 
 const SecondaryButton: FC<{
@@ -35,9 +42,10 @@ const SecondaryButton: FC<{
   size?: 'm' | 's',
   copied?: boolean,
   loading?: boolean,
-}> = ({label, onClick, size = 'm', copied = false, loading}) => {
+  className?: string
+}> = ({label, onClick, size = 'm', copied = false, loading, className}) => {
   return (
-    <StyledButton onClick={onClick} size={size} copied={copied} disabled={copied}>
+    <StyledButton className={className} onClick={onClick} size={size} copied={copied} disabled={copied}>
       {loading ? (
         <div className="spinner-border loading" role="status"/>
       ) : (

@@ -24,6 +24,32 @@ const StyleContainer = styled.div`
     font-weight: 500;
     margin-right: 20px;
   }
+
+  @media only screen and (max-width: 375px) {
+    flex-direction: column;
+    height: auto;
+    padding: 0px; 
+    margin: 0px;
+
+    .main-url {
+      padding: 10px 20px;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.background};
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .section {
+      width: 100%;
+      padding: 10px 20px; 
+
+      .button {
+        margin-top: 10px;
+      }
+    }
+
+  }
 `;
 
 const UrlCard: FC<{
@@ -42,14 +68,16 @@ const UrlCard: FC<{
 
   return (
     <StyleContainer>
-      <span className="main-url">{link.original_link}</span>
-      <div>
+      <div className="main-url">{link.original_link}</div>
+      <div className="section">
         <span className="secondary-url">{link.full_short_link}</span>
         <SecondaryButton 
           label={copied? "Copied!": "Copy"} 
           onClick={() => copyToClipboard()} 
           size='s' 
-          copied={copied} />
+          className="button"
+          copied={copied} 
+        />
       </div>
     </StyleContainer>
   )

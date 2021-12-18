@@ -8,7 +8,7 @@ const StyledButton = styled.button<{
   width: '110px';
   height: '40px';
   border-radius: 50px;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: transparent;
   margin: 10px 10px;
   
   a {
@@ -18,12 +18,12 @@ const StyledButton = styled.button<{
     font-weight: 700;
   }
 
-  :hover {
+  :hover,
+  :active {
     a {
       color: ${({ theme, atFooter}) => atFooter ? theme.colors.primary_cyan : theme.colors.dark_blue};
     }
   }
-
 `;
 
 const FlatButton: FC<{
@@ -31,9 +31,10 @@ const FlatButton: FC<{
   onClick: () => void,
   link: string,
   atFooter?: boolean,
-}> = ({label, onClick, link, atFooter = false}) => {
+  className?: string
+}> = ({label, onClick, link, atFooter = false, className}) => {
   return (
-    <StyledButton onClick={onClick} atFooter={atFooter}>
+    <StyledButton className={className} onClick={onClick} atFooter={atFooter}>
       <a href={link}>{label}</a>
     </StyledButton>
   )

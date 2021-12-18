@@ -14,20 +14,20 @@ const StyleContainer = styled.div`
 
   h5 {
     color: ${({ theme }) => theme.colors.primary_dark_violet};
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 15px;
   }
 
   p {
     color: ${({ theme }) => theme.colors.grayish_violet};
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
   }
 
   .icon {
-    font-size: 35px;
+    font-size: 40px;
     color: ${({ theme }) => theme.colors.primary_cyan};
     background: ${({ theme }) => theme.colors.primary_dark_violet};
     width: 70px;
@@ -35,7 +35,22 @@ const StyleContainer = styled.div`
     text-align: center;
     border-radius: 100%;
     margin-top: -60px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+  }
+
+  @media only screen and (max-width: 375px) {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    h5 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+    .icon {
+      align-self: center;
+    }
   }
 `;
 

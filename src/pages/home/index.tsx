@@ -1,8 +1,19 @@
-import React from 'react'
-import { NavBar, Hero, UrlShortener, Statistics, UserAction, Footer } from '../../components'
+import {useState} from 'react'
+import { 
+  NavBar,
+  Hero,
+  UrlShortener,
+  Statistics,
+  UserAction,
+  Footer,
+  MobileNavModal 
+} from '../../components'
 import styled from 'styled-components'
+import {useIsMobileDevice} from '../../utils/deviceWidth';
 
-const HomeSection = styled.div`
+const HomeSection = styled.div<{
+  isMobile: boolean | null;
+}>`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,26 +22,29 @@ const HomeSection = styled.div`
   .next-section {
     margin-top: 150px;
     background: ${({ theme }) => theme.colors.background};
-    padding: 0px 120px;
+    padding: ${({ isMobile }) => isMobile ? '0px 10px' : '0px 120px'};
     padding-bottom: 100px;
   }
 
   .wrapper {
-    padding: 0px 120px;
+    padding: ${({ isMobile }) => isMobile ? '0px 10px' : '0px 120px'};
   }
 
   .footer-section {
-    padding: 0px 120px;
+    padding: ${({ isMobile }) => isMobile ? '0px 10px' : '0px 120px'};
     background: ${({ theme }) => theme.colors.dark_violet};
   }
 `;
 
 const Home = () => {
+  const isMobile = useIsMobileDevice();
+  const [showModal, setShowModal] = useState<boolean>(false)
+
   return (
-    <HomeSection>
+    <HomeSection isMobile={isMobile}>
       <div className='wrapper'>
         <div className='container'>
-          <NavBar />
+          <NavBar onClick={() => setShowModal(true)}/>
           <Hero />
         </div>
       </div>
@@ -46,6 +60,9 @@ const Home = () => {
           <Footer />
         </div>
       </div>
+      {isMobile && (
+        <MobileNavModal showModal={showModal} hideModal={() => setShowModal(false)}/>
+      )}
     </HomeSection>
   )
 }

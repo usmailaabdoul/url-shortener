@@ -1,6 +1,7 @@
 import { FC, useState } from 'react'
 import styled from 'styled-components'
 import bg_desktop from '../../images/bg-shorten-desktop.svg';
+import bg_mobile from '../../images/bg-shorten-mobile.svg';
 import SecondaryButton from '../button/secondaryButtton';
 
 const StyleContainer = styled.div<{
@@ -15,16 +16,18 @@ const StyleContainer = styled.div<{
   height: 150px;
   border-radius: 5px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  align-items: center;
   padding: 0px 50px;
   margin-bottom: 20px;
 
-  .form {
+  .Wrapper {
     display: flex;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+  }
+
+  .form {
+    width: 100%;
+    margin-right: 20px;
 
     input {
       height: 45px;
@@ -51,12 +54,32 @@ const StyleContainer = styled.div<{
     font-size: 14px;
     margin-top: -5px
   }
+
+  @media only screen and (max-width: 375px) {
+    background-image: url(${bg_mobile});
+    border-radius: 10px;
+    background-position: 100% 0%;
+    background-size: 70% 70%;
+    
+    width: 100%;
+    height: auto;
+    padding: 20px 20px;
+
+    .Wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form {
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 const ShortenUrlCard: FC<{
   shortenURL: (value: string) => void;
   loading: boolean;
-}> = ({shortenURL, loading}) => {
+}> = ({ shortenURL, loading }) => {
   const [error, setError] = useState<boolean>(false);
   const [value, setValue] = useState<string>('');
 
@@ -71,16 +94,18 @@ const ShortenUrlCard: FC<{
 
   return (
     <StyleContainer error={error}>
-      <div className="form">
-        <input 
-          value={error ? 'Shorten a link here...' : value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder='Shorten a link here...'
-          onFocus={onFocus}
-        />
+      <div className="Wrapper">
+        <div className="form">
+          <input
+            value={error ? 'Shorten a link here...' : value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder='Shorten a link here...'
+            onFocus={onFocus}
+          />
+          {error && (<span className="error">Please add a link</span>)}
+        </div>
         <SecondaryButton label="Shotern it!" onClick={() => submit()} loading={loading} />
       </div>
-      {error && (<span className="error">Please add a link</span>)}
     </StyleContainer>
   )
 }

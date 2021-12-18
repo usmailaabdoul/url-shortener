@@ -6,6 +6,10 @@ import UrlCard from '../../card/urlCard';
 const StyleContainer = styled.div`
   margin-top: -75px;
   margin-bottom: 100px;
+
+  @media only screen and (max-width: 375px) {
+    margin-top: -80px;
+  }
 `;
 
 export interface LinkProps {
