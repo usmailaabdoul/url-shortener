@@ -5,7 +5,6 @@ import PrimaryButton from '../../button/primaryButton';
 import IconButton from '../../button/iconButton';
 import { Logo } from '../../../images/svg';
 import { useIsMobileDevice } from '../../../utils/deviceWidth';
-import { AiOutlineMenu } from 'react-icons/ai';
 
 const StyleContainer = styled.div`
   margin-top: 40px;
