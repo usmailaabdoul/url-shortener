@@ -5,6 +5,7 @@ import PrimaryButton from '../../button/primaryButton';
 import IconButton from '../../button/iconButton';
 import { Logo } from '../../../images/svg';
 import { useIsMobileDevice } from '../../../utils/deviceWidth';
+import {isIOS} from 'react-device-detect';
 
 const StyleContainer = styled.div`
   margin-top: 40px;
@@ -33,25 +34,25 @@ const NavBar: FC<{
   onClick: () => void,
 }> = ({ onClick }) => {
   const isMobile = useIsMobileDevice();
-
+  console.log({isIOS})
   return (
     <StyleContainer data-testid="navbar">
       <div className='navWrapper'>
         <div className='logo'>
           <Logo />
         </div>
-        {!isMobile && (
+        {(!isIOS && !isMobile) && (
           <div className='buttons'>
             <FlatButton label="Features" onClick={() => console.log('Sign up')} link="#" />
             <FlatButton label="Pricing" onClick={() => console.log('Sign up')} link="#" />
-            <FlatButton label="Resources" onClick={() => console.log('Sign up')} link="#" />
+            <FlatButton label="Resources" onClick={() => onClick()} link="#" />
           </div>
         )}
       </div>
-      {isMobile && (
+      {(isIOS || isMobile) && (
         <IconButton icon='menu' onClick={() => onClick()}/>
       )} 
-      {!isMobile && (
+      {(!isIOS && !isMobile) && (
         <div className="auth-buttons">
           <FlatButton label="Login" onClick={() => console.log('Login')} link="#" />
           <PrimaryButton label="Sign Up" onClick={() => console.log('Sign up')} link="#" className="signUp-btn" />

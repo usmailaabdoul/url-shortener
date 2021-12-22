@@ -22,14 +22,6 @@ const StyledButton = styled.button<{
     text-decoration: none;
     font-weight: 700;
   }
-
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    width: ${({ isInNav }) => isInNav ? '100%' : '170px'};
-    a {
-      font-size: 18px;
-      font-weight: 700;
-    }
-  }
 `;
 
 const PrimmaryButton: FC<{
@@ -38,10 +30,10 @@ const PrimmaryButton: FC<{
   link: string,
   size?: 'm' | 's';
   className?: string;
-  isInNav?: boolean;
+  isInNav?: string;
 }> = ({label, onClick, link, size = 's', className ='', isInNav}) => {
   return (
-    <StyledButton className={className} onClick={onClick} size={size} isInNav={isInNav}>
+    <StyledButton className={`primary-btn-container ${className} ${isInNav}`} onClick={onClick} size={size} >
       <a href={link}>{label}</a>
     </StyledButton>
   )

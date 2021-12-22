@@ -6,10 +6,6 @@ import UrlCard from '../../card/urlCard';
 const StyleContainer = styled.div`
   margin-top: -75px;
   margin-bottom: 100px;
-
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    margin-top: -80px;
-  }
 `;
 
 export interface LinkProps {
@@ -61,7 +57,7 @@ const UrlShortener = () => {
   }
 
   return (
-    <StyleContainer data-testid="url-shortener">
+    <StyleContainer data-testid="url-shortener" className="url-shortener-container">
       <ShortenUrlCard shortenURL={(value: string) => shortenUrl(value)} loading={loading} urlError={error} clearError={() => setError(null)}/>
       {links.map((link: LinkProps, index: number) => (
         <UrlCard key={index} link={link} />

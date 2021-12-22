@@ -26,32 +26,6 @@ const StyleContainer = styled.div`
     margin-right: 20px;
     flex: 1
   }
-
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    flex-direction: column;
-    height: auto;
-    padding: 0px; 
-    margin: 10px 0px;
-
-    .main-url {
-      padding: 10px 20px;
-      border-bottom: 1px solid ${({ theme }) => theme.colors.background};
-      width: 100%;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .section {
-      width: 100%;
-      padding: 10px 20px; 
-
-      .button {
-        margin-top: 10px;
-      }
-    }
-
-  }
 `;
 
 const UrlCard: FC<{
@@ -69,7 +43,7 @@ const UrlCard: FC<{
   };
 
   return (
-    <StyleContainer>
+    <StyleContainer className="urlCard-container">
       <div className="main-url">{link.original_link}</div>
       <div className="section">
         <span className="secondary-url">{link.full_short_link}</span>

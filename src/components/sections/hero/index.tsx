@@ -49,47 +49,11 @@ const StyleContainer = styled.div`
       width: auto;
     }
   }
-
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    padding-top: 200px;
-    margin-bottom: 0px;
-
-    .main-body {
-      width: 100%;
-      padding-right: 0px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .title {
-        font-size: 42px;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-      .description {
-        font-size: 18px;
-        text-align: center;
-        font-weight: 500;
-      }
-    }
-  
-    .heroImg-wrapper {
-      position: absolute;
-      right: -140px;
-      top: -430px;
-      bottom: 10px;
-  
-      .hero-img {
-        height: 300px;
-        width: auto;
-      }
-    }
-  }
 `;
 
 const Hero = () => {
   return (
-    <StyleContainer>
+    <StyleContainer className="hero-container">
       <div className='main-body'>
         <h1 className='title'>More than just shorter links</h1>
         <p className='description'>Sunt velit ex ea irure magna velit esse nulla tempor excepteur eiusmod nostrud incididunt mollit.</p>

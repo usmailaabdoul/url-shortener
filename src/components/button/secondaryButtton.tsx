@@ -29,11 +29,6 @@ const StyledButton = styled.button<{
     border-width: 2px;
     color: ${({ theme }) => theme.colors.white};
   }
-
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    width: 100%;
-    border-radius: 4px;
-  }
 `;
 
 const SecondaryButton: FC<{
@@ -45,7 +40,7 @@ const SecondaryButton: FC<{
   className?: string
 }> = ({label, onClick, size = 'm', copied = false, loading, className}) => {
   return (
-    <StyledButton className={className} onClick={onClick} size={size} copied={copied} disabled={copied}>
+    <StyledButton className={`secondary-btn-container ${className}`} onClick={onClick} size={size} copied={copied} disabled={copied}>
       {loading ? (
         <div className="spinner-border loading" role="status"/>
       ) : (

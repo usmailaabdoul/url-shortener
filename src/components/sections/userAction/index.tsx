@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import PrimaryButton from '../../button/primaryButton';
 import bg_desktop from '../../../images/bg-boost-desktop.svg';
-import bg_mobile from '../../../images/bg-boost-mobile.svg';
 
 const StyleContainer = styled.div`
   background: ${({ theme }) => theme.colors.primary_dark_violet};
@@ -20,16 +19,11 @@ const StyleContainer = styled.div`
     font-family: ${({ theme }) => theme.font.primary};
     font-weight: 700;
   }
-
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    background-image: url(${bg_mobile});
-    height: 300px;
-  }
 `;
 
 const UserAction = () => {
   return (
-    <StyleContainer>
+    <StyleContainer className='user-action-container'>
       <h1>Boost your links today</h1>
       <PrimaryButton label="Get Started" onClick={() => console.log('Get Started')} link="#" size='m' />
     </StyleContainer>

@@ -36,21 +36,6 @@ const StyleContainer = styled.div`
     margin-top: -60px;
     margin-bottom: 30px;
   }
-
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    h5 {
-      text-align: center;
-    }
-    p {
-      text-align: center;
-    }
-    .icon {
-      align-self: center;
-    }
-  }
 `;
 
 const BodyCard: FC<{
@@ -60,7 +45,7 @@ const BodyCard: FC<{
   className?: string;
 }>= ({icon, title, description, className = ''}) => {
   return (
-    <StyleContainer className={className}>
+    <StyleContainer className={`bodyCard-container ${className}`}>
       <div className="icon">
         {icon === 'chart' && (<AiOutlineLineChart />)}
         {icon === 'speed' && (<IoSpeedometerOutline />)}

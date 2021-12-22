@@ -6,32 +6,7 @@ import PrimaryButton from '../button/primaryButton';
 import FlatButton from '../button/flatButton';
 import { theme } from '../../styles/theme';
 
-const StyleContainer = styled.div`
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    margin: 30px 20px;
-
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      border-bottom: 1px solid ${({ theme }) => theme.colors.background}80;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-    }
-    
-    .navModalBtn {
-      a {
-        color: ${({ theme }) => theme.colors.white};
-        font-size: 18px;
-        font-weight: 700;
-      }
-    }
-
-    .auth-buttons {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-`;
+const StyleContainer = styled.div``;
 
 
 const modalStyles: ReactModal.Styles = {
@@ -77,7 +52,7 @@ const MobileNavModal: FC<{showModal: boolean, hideModal: () => void}> = ({showMo
       contentLabel="Example Modal"
       ariaHideApp={false}
     >
-      <StyleContainer data-testid="mobile-nav-modal">
+      <StyleContainer className="modal-style" data-testid="mobile-nav-modal">
         <div className='buttons'>
           <FlatButton className='navModalBtn' label="Features" onClick={() => console.log('Sign up')} link="#" />
           <FlatButton className='navModalBtn' label="Pricing" onClick={() => console.log('Sign up')} link="#" />
@@ -85,7 +60,7 @@ const MobileNavModal: FC<{showModal: boolean, hideModal: () => void}> = ({showMo
         </div>
         <div className="auth-buttons">
           <FlatButton className='navModalBtn' label="Login" onClick={() => console.log('Sign up')} link="#" />
-          <PrimaryButton isInNav size='m' label="Sign Up" onClick={() => console.log('Sign up')} link="#" className="signUp-btn" />
+          <PrimaryButton isInNav='primary-btn-nav' size='m' label="Sign Up" onClick={() => console.log('Sign up')} link="#" className="signUp-btn" />
         </div>
       </StyleContainer>
     </ReactModal>
