@@ -1,7 +1,6 @@
 import { FC, useState } from 'react'
 import styled from 'styled-components'
 import bg_desktop from '../../images/bg-shorten-desktop.svg';
-import bg_mobile from '../../images/bg-shorten-mobile.svg';
 import SecondaryButton from '../button/secondaryButtton';
 
 const StyleContainer = styled.div<{
@@ -54,26 +53,6 @@ const StyleContainer = styled.div<{
     font-size: 14px;
     margin-top: -5px
   }
-
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    background-image: url(${bg_mobile});
-    border-radius: 10px;
-    background-position: 100% 0%;
-    background-size: 70% 70%;
-    
-    width: 100%;
-    height: auto;
-    padding: 20px 20px;
-
-    .Wrapper {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form {
-      margin-bottom: 20px;
-    }
-  }
 `;
 
 const ShortenUrlCard: FC<{
@@ -100,7 +79,7 @@ const ShortenUrlCard: FC<{
   }
 
   return (
-    <StyleContainer error={error} data-testid="shorten-url-form">
+    <StyleContainer error={error} data-testid="shorten-url-form" className="shortenUrl-container">
       <div className="Wrapper">
         <div className="form">
           <input

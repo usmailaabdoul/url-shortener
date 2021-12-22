@@ -46,50 +46,11 @@ const StyleContainer = styled.div`
       margin-top: 70px
     }
   }
-
-  @media only screen and (max-width: ${({ theme }) => theme.layouts.mobile}) {
-    .title-section {
-      width: 100%;
-
-      h1 {
-        font-size: 28px;
-        margin-bottom: 20px;
-      }
-      p {
-        width: auto;
-      }
-    }
-
-    .statistics-body {
-      flex-direction: column;
-      align-items: center;
-
-      .seperator {
-        height: 60px;
-        width: 8px;
-        background: ${({ theme }) => theme.colors.primary_cyan};
-        flex: none;
-        margin-top: 0px
-      }
-  
-      .card-1 {
-        flex: 1;
-      }
-      .card-2 {
-        flex: 1;
-        margin-top: 30px
-      }
-      .card-3 {
-        flex: 1;
-        margin-top: 30px
-      }
-    }
-  }
 `;
 
 const Statistics = () => {
   return (
-    <StyleContainer>
+    <StyleContainer className="statistics-container">
       <div className='title-section'>
         <h1>Advanced Statistics</h1>
         <p>Consequat esse et et Lorem veniam elit excepteur et aute. Qui et deserunt cupidatat irure excepteur id exercitation anim.</p>

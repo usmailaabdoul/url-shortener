@@ -60,7 +60,7 @@ const StyleContainer = styled.div`
 
 const Footer = () => {
   return (
-    <StyleContainer>
+    <StyleContainer className="footer-container">
       <div className="logo">
         <Logo color={theme.colors.white} />
       </div>
