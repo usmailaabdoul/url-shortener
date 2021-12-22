@@ -1,4 +1,4 @@
-## Deployed  [usmailaabdoul.github.io/url-shortener/](usmailaabdoul.github.io/url-shortener/)
+## Deployed  [https://usmailaabdoul.github.io/url-shortener/](https://usmailaabdoul.github.io/url-shortener/)
 
 # Getting Started with URL - shortener App
 
