@@ -1,4 +1,4 @@
-## Deployed  [![Netlify Status](https://api.netlify.com/api/v1/badges/2c274e7d-b239-4783-a9b9-5a9acc2e3198/deploy-status)](https://app.netlify.com/sites/shorten-your-links/deploys)
+## Deployed  [usmailaabdoul.github.io/url-shortener/](usmailaabdoul.github.io/url-shortener/)
 
 # Getting Started with URL - shortener App
 
