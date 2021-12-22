@@ -7,10 +7,10 @@ import {Home} from './pages';
 function App() {
   return (
     <>
-      <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Home />
       </ThemeProvider>
+      <GlobalStyle />
     </>
   );
 }
